@@ -1,0 +1,223 @@
+<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, shrink-to-fit=no viewport-fit=cover">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="robots" content="noindex, follow">
+		<link rel="icon" type="image/x-icon" href="https://a.poki-cdn.com/img/favicon.ico">
+
+		
+
+		
+<style>
+* {
+	box-sizing: border-box;
+}
+
+/* SAFARI GROWING IFRAME FIX */
+html, body { height: 100%; width: 100%; overflow: hidden; }
+body { overflow: auto;-webkit-overflow-scrolling: touch; }
+/* END SAFARI GROWING IFRAME FIX */
+
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	background-color: #002B50;
+}
+
+#gameframe {
+	flex-grow: 1;
+	border: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	z-index: 999998;
+	position: relative;
+	transform-origin: bottom left;
+	transform: scale3d(1, 1, 1); /* hardware accelerated scaling */
+	transition: transform 0.3s ease-in;
+	will-change: transform;
+	/* iOS safari growing iframe fix */
+	height: 1px; /* this works because flex-grow is more important */
+	min-width: 100%;
+	width: 1px;
+}
+
+#footer {
+	padding: 10px 16px;
+	height: 64px;
+	width: 100%;
+	background: #fff;
+	display: flex;
+	position: relative;
+}
+
+#store-info,
+#game-info {
+	display: flex;
+	flex-direction: column;
+}
+
+#game-info {
+	flex-grow: 1;
+}
+
+#store-info {
+	flex-shrink: 1;
+	justify-content: center;
+    align-items: center;
+}
+
+#store-info {
+	flex-direction: row;
+	margin: 0 16px;
+}
+
+h2{
+	font-size:inherit;
+}
+
+#game-info h2 {
+	font-family: Torus, Arial, sans-serif;
+	font-size: 20px;
+	color: #002B50;
+	margin: 2px 0 0;
+	line-height:24px;
+}
+
+#game-info p {
+	font-family: 'Proxima Nova', Arial, sans-serif;
+	color: #7E91AB;
+	font-size: min(max(8px, 3vw), 12px);
+	margin: 0;
+	white-space: nowrap;
+}
+
+#thumb-info {
+	display:flex;
+}
+
+#thumb {
+	flex-shrink: 0;
+	width: 44px;
+	height: 44px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.24);
+	margin-right: 16px;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+#poki-logo {
+	flex-shrink: 0;
+}
+
+#poki-logo-img {
+	margin-top: -4px;
+	height: 52px;
+	vertical-align: bottom;
+}
+
+.store-link {
+	display: inline-block;
+	vertical-align: bottom;
+	margin-right: 8px;
+	max-width: 130px;
+}
+
+.store-link img {
+	width: 100%;
+}
+
+#adInfo {
+	padding: 10px 16px;
+	height: 64px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #FFF;
+	display: none;
+	align-items: center;
+	pointer-events: none;
+	transition: opacity 500ms ease-in;
+}
+
+#adInfo .logo {
+	margin: 4px;
+}
+
+#adInfo .textContainer {
+	display: inline-block;
+	margin-left: 16px;
+}
+
+.textContainer > .title {
+	font: bold 16px/20px Proxima Nova;
+	color: #002B50;
+	margin: 0;
+}
+
+.textContainer > .status {
+	font: 12px/16px Proxima Nova;
+	color: #5D6B84;
+	margin: 0;
+}
+
+#adProgress {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: #B8C7DD;
+	display: none;
+}
+#adProgressFill {
+	height: 100%;
+	width: 0%;
+	background: #009CFF;
+	transition: width 0.5s linear;
+}
+
+@keyframes scaleDelay {
+	0%,
+	80%,
+	100% {
+		transform: scale(0);
+	}
+
+	40% {
+		transform: scale(1);
+	}
+}
+.spinner {
+	position: absolute;
+	display: flex;
+	top: 50%;
+	left: 50%;
+	margin-left: -33px;
+	margin-top: -9px;
+	width: 66px;
+}
+.spinner > div {
+	width: 18px;
+	height: 18px;
+	margin: 0 2px;
+	border-radius: 100%;
+	background: #fff;
+	animation: scaleDelay 1.4s infinite ease-in-out both;
+}
+.spinner .bounce1 {
+	animation-delay: -.32s;
+}
+.spinner .bounce2 {
+	animation-delay: -.16s;
+}
+</style>
+
+
+		
+
+		<link rel="canonical" href="https://poki.com/en/g/drive-mad">
+
+	</head>
